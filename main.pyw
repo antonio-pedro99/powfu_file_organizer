@@ -23,7 +23,7 @@ videos_exts = [".mp4", ".avi", ".mpg", ".mkv",".3gp"]
 #extensions for files of type compressed arquives.
 compacted_exts = [".rar", ".zip", ".zp"]
 #extensions for executables files.
-exec_exts = [".exe"]
+exec_exts = [".exe", ".EXE"]
 #this list will contain all extensions type by calling extend method
 extensions = []
 extensions.extend(image_exts)
@@ -63,14 +63,13 @@ def createFolders():
     if total > 2: #if total is greater than 2, it means that except the main.pyw, and runner.bat there are files to organize
         
         if os.path.exists(main_folder) == True: #if the the folder where we will organize already existis
-            os.chdir(os.getcwd()+"\%s"%main_folder) #we will go into that folder
+            os.chdir(os.path.join(os.getcwd(), main_folder)) #we will go into that folder
         else: #otherwise
-
             os.makedirs(main_folder) #create the folder
-            os.chdir(os.getcwd()+"\%s"%main_folder) #go into the folder
+            os.chdir(os.path.join(os.getcwd(), main_folder)) #go into the folder
             for folder in folders_name: #iterate through folders_name list and create all requerided folders.
                 os.makedirs(folder)
-    else: #otherwise
+    else: #otherwise, if there are only two files, main.pyw and runner.bat
         flag = 1 
         print("No files to organize!")
     return flag
@@ -79,7 +78,7 @@ def moveFiles(file, destination):
     """
         This is the function that move the files into their apropriete folder. 
 
-        It also replace duplicated files.
+        It also replaces duplicated files.
 
         Parametres : 
             File - The file to be copied as a string type.
@@ -88,21 +87,20 @@ def moveFiles(file, destination):
         Return : This function does not return any value.
     """
 
-    destin =  os.getcwd()+"\%s\%s"%(main_folder, destination)
-
-    source = os.getcwd()+"\%s"%file #source path, in this case where the scrip will be executed
+    destin =  os.path.join(os.getcwd(), main_folder, destination )
+    source =  os.path.join(os.getcwd(), file) #source path, in this case where the scrip will be executed
     try:
         #if the file is already in the folder, unlike it and move a new one.
         if file in os.listdir(destin):
-            os.unlink(destin+"\%s"%file)
+            os.unlink(os.path.join(destin, file))
             shutil.move(source, destin)
         else: #otherwise just move it
             shutil.move(source, destin)
-    except BaseException:
+    except BaseException as e:
         pass
 
 flag = createFolders() #here we instance a variable name as flag and consequentily call the createFolder function
-os.chdir(os.getcwd()+"\..") #After create the folder, the current path will be PowFu..., then this line get out of this folder and go to the previous folder
+os.chdir(os.path.join(os.getcwd(), "..")) #After create the folder, the current path will be PowFu..., then this line get out of this folder and go to the previous folder
 
 for file in os.listdir(os.getcwd()): #iterate again all the files
     if os.path.isdir(file): #if it is folder, skip it. 
@@ -141,7 +139,7 @@ for file in os.listdir(os.getcwd()): #iterate again all the files
                     total_others = total_others + 1
 
 #calculate the total of files organized!
-total_files = total_compacted + total_documents + total_exe + total_files + total_images + total_images + total_videos
+total_files = total_compacted + total_documents + total_exe + total_images + total_videos + total_others
 
 if flag == 0: #if flag is equal to zero, then we have complete all the task sucessfully, show the results to the user.
     print("==============RESULTS========================")
@@ -153,6 +151,6 @@ if flag == 0: #if flag is equal to zero, then we have complete all the task suce
     print("Total Number of Compacteds copied: %s"%total_compacted)
     print("Total Number of Programs copied: %s"%total_exe)
     print("Total Number of others file copied: %s"%total_others)
-    print("Your Computer is organized now! Go to %s"%os.getcwd()+"\%s"%main_folder)
+    print("Your Computer is organized now! Go to %s"%os.path.join(os.getcwd()), main_folder)
     
 
