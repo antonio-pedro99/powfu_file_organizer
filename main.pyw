@@ -76,7 +76,7 @@ def createFolders():
     return flag
 
 def moveFiles(file, destination):
-     """
+    """
         This is the function that move the files into their apropriete folder. 
 
         It also replace duplicated files.
@@ -86,9 +86,10 @@ def moveFiles(file, destination):
             destination - The name of the folder where the file must be copied, as string.
 
         Return : This function does not return any value.
-
     """
-    destin =  os.getcwd()+"\%s\%s"%(main_folder, destination) #destination path
+
+    destin =  os.getcwd()+"\%s\%s"%(main_folder, destination)
+
     source = os.getcwd()+"\%s"%file #source path, in this case where the scrip will be executed
     try:
         #if the file is already in the folder, unlike it and move a new one.
