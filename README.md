@@ -7,7 +7,7 @@
     shutil - provides utilities functions for copying, archiving files and directiry trees.
     os - it allows us to work with directories, files and so on.
     sys - This module provides access to some objects used or maintained by the interpreter and to functions that interact strongly with the interpreter.
-  
+    Link to download: https://github.com/antonio-pedro99/powfu_file_organizer
     
     To use this:
     1. Copy main.pyw and runner.bat to the folder you want to organize. Please, don't try to organize C:\,  because it should contain files that can not be moved.
