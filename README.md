@@ -7,9 +7,7 @@
     shutil - provides utilities functions for copying, archiving files and directiry trees.
     os - it allows us to work with directories, files and so on.
     sys - This module provides access to some objects used or maintained by the interpreter and to functions that interact strongly with the interpreter.
-    
-    "Actually it should only work with people who are using python, as I have not created any executable file"
-    It is in development, as far as I can I will create the executable file and make the download avaible for everyone.
+    Link to download: https://bit.ly/3h2n8wU
     
     To use this:
     1. Copy main.pyw and runner.bat to the folder you want to organize. Please, don't try to organize C:\,  because it should contain files that can not be moved.
@@ -21,5 +19,5 @@
     
     You may contribute to this project if  you want, feel free to do that.
     
-    
+    "IF YOU CHANGE THE NAME OF THE EXECUTABLE FILE, THIS MIGHT NOT WORK"
     By: António Pedro
