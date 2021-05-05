@@ -1,6 +1,6 @@
 # powfu_file_organizer
 
-This an utility script to help users organize their files without stress.
+This is a utility script to help users organize their files without stress.
 It goes through a folder and check all files and organize them by type (extension).
 
 ## Requirements:
@@ -18,7 +18,7 @@ Link to download: <https://bit.ly/3h2n8wU>
     3. Att: I am using .pyw and .bat just to give you idea of the extensions of these files, depending upon your configuration, they may just be shown as main and runner;
     4. Everything is done, follow the instruction that you will receive.
     
-**After organized, it copy news file to that folder, if you run again the runner, it will organize them depending upon the type of that file.
+**After organized, it copies the new file to that folder, if you run again the runner, it will organize them depending upon the type of that file.
 This script is good to work on downloads folder, because it may contain some type of files that you don't have time to organize.**
 
 *You may contribute to this project if  you want, feel free to do that.*
