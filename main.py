@@ -23,6 +23,7 @@ folders_name = [
     "7. Others"]
 
 
+
 def createFolders():
     """
         This is the function that creates a new folder named as 
@@ -53,19 +54,18 @@ def createFolders():
     else: 
         flag = 1 
         print("No files to organize!")
-    return flag
+    return _flag
 
-def moveFiles(file, destination):
+
+def moveFiles(_file, _destination):
     """
-        This is the function that move the files into their apropriete folder. 
+    This is the function that move the files into their apropriate folder.
+    It also replaces duplicated files.
 
-        It also replaces duplicated files.
+    :param _file: The file to be copied as a string type.
+    :param _destination: The name of the folder where the file must be copied, as string.
 
-        Parametres : 
-            File - The file to be copied as a string type.
-            destination - The name of the folder where the file must be copied, as string.
-
-        Return : This function does not return any value.
+    - Return: This function does not return any value.
     """
 
     destin =  os.path.join(os.getcwd(), main_folder, destination )
@@ -81,7 +81,7 @@ def moveFiles(file, destination):
 
 
 def main():
-
+    
     total_documents = 0
     total_music = 0
     total_videos = 0
