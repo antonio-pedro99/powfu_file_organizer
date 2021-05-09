@@ -1,5 +1,5 @@
-import shutil, os, time
-import extensions as exts
+import shutil, os, time, getpass
+import extensions as exts, sys
 
 '''
     This a utility script to help users organize their files without stress.
@@ -14,16 +14,24 @@ main_folder = "PowFu - File Organizer"
 extensions = exts.getAll
 
 folders_name = [
-    "1. Musics", 
-    "2. Images", 
-    "3. Videos", 
-    "4. Documents", 
-    "5. Zippers",
-    "6. Programs", 
-    "7. Others"]
+    "Musics", 
+    "Images", 
+    "Videos", 
+    "Documents", 
+    "Zippers",
+    "Programs", 
+    "Others"]
 
-
-
+folder_exceptions = [
+    "C:\\", 
+    "C:\\Windows",
+    "C:\\Windows\\System32",
+    "C:\\Program Files",
+    "C:\\Program Files (x86)",
+    "C:\\Users",
+    "C:\\Users\\%s"%getpass.getuser(),
+    "C:\\Users\\%s\\Desktop"%getpass.getuser()
+]
 def createFolders():
     """
         This is the function that creates a new folder named as 
@@ -39,31 +47,54 @@ def createFolders():
     """
     flag = 0 
     total = 0 
-  
-    for i in os.listdir(os.getcwd()):
-        if os.path.isfile(i): 
-            total = total + 1
-    if total > 0: 
-        if os.path.exists(main_folder) == True: 
-            os.chdir(os.path.join(os.getcwd(), main_folder)) 
+    current_path = os.getcwd()
+    extensions_found = []
+    if current_path not in folder_exceptions:
+        for i in os.listdir(current_path):
+            if os.path.isfile(i): 
+                if exts.guess(i) not in extensions_found:
+                    extensions_found.append(exts.guess(i))
+                total = total + 1
+        if total > 0: 
+            if os.path.exists(main_folder) == True: 
+                os.chdir(os.path.join(current_path, main_folder)) 
+            else: 
+                os.makedirs(main_folder) 
+                os.chdir(os.path.join(current_path, main_folder)) 
+                i = 0
+                for index in extensions_found:
+                    if exts.isMusic(index):
+                       i = 0
+                    elif exts.isImage(index):
+                        i = 1
+                    elif exts.isVideo(index):
+                        i = 2
+                    elif exts.isDoc(index):
+                        i = 3
+                    elif exts.isCompacted(index):
+                        i = 4
+                    elif exts.isExecutable(index):
+                        i = 5
+                    else:
+                        i = 6
+                    if folders_name[i] not in os.listdir(os.getcwd()):
+                        os.makedirs(folders_name[i])
         else: 
-            os.makedirs(main_folder) 
-            os.chdir(os.path.join(os.getcwd(), main_folder)) 
-            for folder in folders_name: 
-                os.makedirs(folder)
-    else: 
-        flag = 1 
-        print("No files to organize!")
-    return _flag
+            flag = 1 
+            print("No files to organize!")
+    else:
+        flag = 1
+        print("Access dinied - You can not organize this folder!")
+    return flag
 
 
-def moveFiles(_file, _destination):
+def moveFiles(file, destination):
     """
     This is the function that move the files into their apropriate folder.
     It also replaces duplicated files.
 
-    :param _file: The file to be copied as a string type.
-    :param _destination: The name of the folder where the file must be copied, as string.
+    :param file: The file to be copied as a string type.
+    :param destination: The name of the folder where the file must be copied, as string.
 
     - Return: This function does not return any value.
     """
@@ -79,9 +110,13 @@ def moveFiles(_file, _destination):
     except BaseException as e:
         pass
 
-
+def showTop():
+    print("=====================================================================")
+    print("======                POWFU - FILE ORGANIZER                   ======")   
+    print("======                  By. Antonio Pedro                      ======") 
+    print("=====================================================================")
 def main():
-    
+
     total_documents = 0
     total_music = 0
     total_videos = 0
@@ -90,7 +125,8 @@ def main():
     total_exe= 0
     total_others = 0
     total_files = 0
-
+    
+    showTop()
     for file in os.listdir(os.getcwd()): 
         if os.path.isdir(file): 
             pass
@@ -113,19 +149,17 @@ def main():
                     moveFiles(file, folders_name[4])
                     total_compacted = total_compacted + 1
                 elif exts.isExecutable(extension):
-                    if file == "PowFu-File Organizer.exe" or file ==  "PowFu-File Organizer.bin" or file == "PowFu-File Organizer.run" : 
+                    if file == "PowFu-File Organizer.run" : 
                         pass
                     else:
                         moveFiles(file, folders_name[5])
                         total_exe = total_exe + 1
                 else: 
-                    moveFiles(file,folders_name[6])
+                    moveFiles(file, folders_name[6])
                     total_others = total_others + 1
     total_files = total_compacted + total_documents + total_exe + total_images + total_videos + total_others
 
     if flag == 0: 
-        
-        print("============== RESULTS ========================")
         print("Total Number of file copied: %s"%total_files)
         print("Total Number of Documents copied: %s"%total_documents)
         print("Total Number of Musics copied: %s"%total_music)

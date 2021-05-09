@@ -1,0 +1,20 @@
+
+To Install:
+	1. Open the setup
+	2. Wait till the installation is done.
+
+How to use:
+	1. Open the folder you want to organize.
+	2. Click on the right button of your mouse(To open the Context Menu)
+	3. Click on Organize With PowFu - File Organizer
+
+To uninstall:
+	1. Go to Program Files
+	2. Open the uninstaller
+	3. Restart your computer if required
+
+This program was made by Antonio Pedro.
+Follow me: 
+github: github.com/antonio-pedro99
+Facebook: Antonio Pedro
+Instagram: @antonio.pedro42

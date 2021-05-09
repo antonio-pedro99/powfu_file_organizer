@@ -15,14 +15,16 @@ image_exts = [
     ".tiff", 
     ".gif",
     ".bmp",
-    ".dib"]
+    ".dib",
+    ".ico"]
 
 
 music_exts = [
     ".mp3", 
     ".mp2",
     ".wav",
-    ".m4a"]
+    ".m4a",
+    ".MP3"]
 
 docs_exts  = [
     ".pptx", 
@@ -40,7 +42,9 @@ videos_exts = [
     ".avi", 
     ".mpg", 
     ".mkv",
-    ".3gp"
+    ".3gp",
+    ".MP4",
+    ".wmv"
     ]
 
 compacted_exts = [
@@ -52,6 +56,10 @@ exec_exts = [
     ".exe", 
     ".EXE", 
     ".bin"]
+
+iso_exts = [
+    ".iso",
+    ]
 
 
 def guess(file):
@@ -111,3 +119,8 @@ def isExecutable(extension):
         res = True
     return res
 
+def isIso(extension):
+    res = False
+    if extension in iso_exts:
+        res = True
+    return res
