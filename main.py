@@ -32,6 +32,27 @@ folder_exceptions = [
     "C:\\Users\\%s"%getpass.getuser(),
     "C:\\Users\\%s\\Desktop"%getpass.getuser()
 ]
+
+def createOnce(extensions_found):
+    i = 0
+    for index in extensions_found:
+        if exts.isMusic(index):
+            i = 0
+        elif exts.isImage(index):
+            i = 1
+        elif exts.isVideo(index):
+            i = 2
+        elif exts.isDoc(index):
+            i = 3
+        elif exts.isCompacted(index):
+            i = 4
+        elif exts.isExecutable(index):
+            i = 5
+        else:
+            i = 6
+        if folders_name[i] not in os.listdir(os.getcwd()):
+            os.makedirs(folders_name[i]) 
+
 def createFolders():
     """
         This is the function that creates a new folder named as 
@@ -57,28 +78,12 @@ def createFolders():
                 total = total + 1
         if total > 0: 
             if os.path.exists(main_folder) == True: 
-                os.chdir(os.path.join(current_path, main_folder)) 
+                os.chdir(os.path.join(current_path, main_folder))
+                createOnce(extensions_found)
             else: 
                 os.makedirs(main_folder) 
                 os.chdir(os.path.join(current_path, main_folder)) 
-                i = 0
-                for index in extensions_found:
-                    if exts.isMusic(index):
-                       i = 0
-                    elif exts.isImage(index):
-                        i = 1
-                    elif exts.isVideo(index):
-                        i = 2
-                    elif exts.isDoc(index):
-                        i = 3
-                    elif exts.isCompacted(index):
-                        i = 4
-                    elif exts.isExecutable(index):
-                        i = 5
-                    else:
-                        i = 6
-                    if folders_name[i] not in os.listdir(os.getcwd()):
-                        os.makedirs(folders_name[i])
+                createOnce(extensions_found)
         else: 
             flag = 1 
             print("No files to organize!")
