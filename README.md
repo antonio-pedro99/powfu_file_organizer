@@ -9,7 +9,7 @@ It goes through a folder and check all files and organize them by type (extensio
 - os: it allows you to work with directories, files and so on.
 - sys: This module provides access to some objects used or maintained by the interpreter and to functions that interact strongly with the interpreter.
 
-Link to download: <https://bit.ly/3h2n8wU>
+Link to download: https://bit.ly/3h9Yx9C
     
 ## To use this:
 
