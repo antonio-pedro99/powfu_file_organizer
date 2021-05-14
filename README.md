@@ -9,14 +9,16 @@ It goes through a folder and check all files and organize them by type (extensio
 - os: it allows you to work with directories, files and so on.
 - sys: This module provides access to some objects used or maintained by the interpreter and to functions that interact strongly with the interpreter.
 
-Link to download: https://bit.ly/3h9Yx9C
+Link to download: https://bit.ly/3ofs7fk
     
-## To use this:
+## Installation:
+![installation](https://user-images.githubusercontent.com/42675180/118299311-80192800-b4d8-11eb-9f5c-553dc398774c.gif)
 
-    1. Copy main.pyw and runner.bat to the folder you want to organize. Please, don't try to organize C:\,  because it should contain files that can not be moved.
-    2. Once copied, now you have just to run the runner.bat file.
-    3. Att: I am using .pyw and .bat just to give you idea of the extensions of these files, depending upon your configuration, they may just be shown as main and runner;
-    4. Everything is done, follow the instruction that you will receive.
+    
+## How to use:
+    
+![Animação](https://user-images.githubusercontent.com/42675180/118299464-b0f95d00-b4d8-11eb-95f5-95ee64493b2e.gif)
+
     
 **After organized, it copies the new file to that folder, if you run again the runner, it will organize them depending upon the type of that file.
 This script is good to work on downloads folder, because it may contain some type of files that you don't have time to organize.**
