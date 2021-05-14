@@ -20,11 +20,9 @@ Link to download: https://bit.ly/3ofs7fk
 ![Animação](https://user-images.githubusercontent.com/42675180/118299464-b0f95d00-b4d8-11eb-95f5-95ee64493b2e.gif)
 
     
-**After organized, it copies the new file to that folder, if you run again the runner, it will organize them depending upon the type of that file.
-This script is good to work on downloads folder, because it may contain some type of files that you don't have time to organize.**
+**Don't change or delete any file. **
 
 *You may contribute to this project if  you want, feel free to do that.*
 
-> "IF YOU CHANGE THE NAME OF THE EXECUTABLE FILE, THIS MIGHT NOT WORK"
 
 &copy; [António Pedro](https://github.com/antonio-pedro99/)
