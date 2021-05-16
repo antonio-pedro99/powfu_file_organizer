@@ -76,7 +76,7 @@ if __name__ == '__main__':
         time.sleep(3)
         createFolder()
         copyFiles(os.path.join("powfu.exe"), "windows-executable")
-        copyFiles(os.path.join("READ FIRST.txt"), os.getcwd())
+        copyFiles(os.path.join("READ_FIRST.txt"), os.getcwd())
         copyFiles(os.path.join("uninstaller.bat"), "windows-executable")
         create_root_key()
         print("Installation Done successfully!")
