@@ -1,7 +1,13 @@
+<div align="center">
+
+![powfu-file-organizer-icon](img/icon-512x512.png)
+
 # powfu_file_organizer
 
     This is a utility script to help users organize their files easily.
     It goes through a folder and check all files and organize them by type (extension).
+
+</div>
 
 ## Requirements:
 
