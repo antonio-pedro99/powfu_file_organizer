@@ -7,7 +7,7 @@
 
 - shutil: provides utilities (functions) for copying, archiving files and directory trees.
 - os: it allows you to work with directories, files and so on.
-- sys: This module provides access to some objects used or maintained by the interpreter and to functions that interact strongly with the interpreter.
+- sys: This module provides access to some objects used and maintained by the interpreter that interact with the system.
 
 > Link to download: <https://bit.ly/3ofs7fk>
 
