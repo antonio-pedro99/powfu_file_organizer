@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Linden Hill
+- Font Author: Copyright (c) 2010, Barry Schwartz (chemoelectric@chemoelectric.org)
+- Font Source: http://fonts.gstatic.com/s/lindenhill/v12/-F61fjxoKSg9Yc3hZgO8ygFI7CwC009k.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
