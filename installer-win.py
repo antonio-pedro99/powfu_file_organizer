@@ -21,7 +21,7 @@ full = os.path.join(installation_destination, folder_name)
 
 def copyFiles(file, my_path):
     """
-        This is the function that move the files into their apropriete folder. 
+        This is the function that move the files into their apropriate folder.
 
         It also replaces duplicated files.
 
@@ -71,16 +71,16 @@ if __name__ == '__main__':
     try:
         print("=====================================================================")
         print("======                POWFU - FILE ORGANIZER                   ======")
-        print("======                      Installing                         ======")
+        print("======                    Installing...                        ======")
         print("=====================================================================")
         time.sleep(3)
         createFolder()
         copyFiles(os.path.join("powfu.exe"), "windows-executable")
-        copyFiles(os.path.join("READ_FIRST.txt"), os.getcwd())
+        copyFiles(os.path.join("HOWTO.txt"), os.getcwd())
         copyFiles(os.path.join("uninstaller.bat"), "windows-executable")
         create_root_key()
         print("Installation Done successfully!")
         time.sleep(2)
-    except:
+    except Exception:
         print("Sorry we could not install.")
         time.sleep(3)
