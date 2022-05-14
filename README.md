@@ -1,28 +1,61 @@
+<div align="center">
+
+![powfu-file-organizer-icon](img/icon-512x512.png)
+
 # powfu_file_organizer
 
-This is a utility script to help users organize their files without stress.
-It goes through a folder and check all files and organize them by type (extension).
+    This is a utility script to help users organize their files easily.
+    It goes through a folder and check all files and organize them by type (extension).
+
+</div>
 
 ## Requirements:
 
 - shutil: provides utilities (functions) for copying, archiving files and directory trees.
 - os: it allows you to work with directories, files and so on.
-- sys: This module provides access to some objects used or maintained by the interpreter and to functions that interact strongly with the interpreter.
+- sys: This module provides access to some objects used and maintained by the interpreter that interact with the system.
 
-Link to download: https://bit.ly/3ofs7fk
-    
-## Installation:
-![installation](https://user-images.githubusercontent.com/42675180/118299311-80192800-b4d8-11eb-9f5c-553dc398774c.gif)
+> Link to download: <https://bit.ly/3ofs7fk>
 
-    
-## How to use:
-    
-![Animação](https://user-images.githubusercontent.com/42675180/118299464-b0f95d00-b4d8-11eb-95f5-95ee64493b2e.gif)
+## For a better explanation `READ_FIRST.txt`
 
-    
-**Don't change or delete any file. **
+```text
+To Install:
+  1. Open the setup
+  2. Wait untill the installation be done.
 
+How to use:
+  1. Open the folder you want to organize.
+  2. Click on the right button of your mouse (To open the Context Menu)
+  3. Click on Organize With PowFu - File Organizer
+
+To uninstall:
+  1. Go to Program Files
+  2. Open the uninstaller
+  3. Restart your computer if required
+
+This program was made by Antonio Pedro.
+
+Follow me: 
+github: github.com/antonio-pedro99
+Facebook: Antonio Pedro
+Instagram: @antonio.pedro42
+```
+
+
+## Demo
+
+- `Installation`
+
+![installation-gif](img/installation.gif)
+
+- `How to use`
+
+![how-to-use-gif](img/howtouse.gif)
+
+**Don't change or delete any file!** \
 *You may contribute to this project if  you want, feel free to do that.*
 
+---
 
 &copy; [António Pedro](https://github.com/antonio-pedro99/)
