@@ -27,7 +27,6 @@ folders_name = [
     "Programs",
     "Others"]
 
-
 # don't worry, python don't need to use this slash '\'
 # because the compiler (on windows) convert this '/' to this '\'
 folder_exceptions = [
@@ -40,7 +39,6 @@ folder_exceptions = [
     f"C:/Users/{getpass.getuser()}",
     f"C:/Users/{getpass.getuser()}/Desktop"
 ]
-
 
 def create_one(_extensions_found):
     i = 0
