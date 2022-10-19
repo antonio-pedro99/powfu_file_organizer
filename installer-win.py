@@ -19,13 +19,13 @@ installation_destination = "C:/Program Files/"
 full = os.path.join(installation_destination, folder_name)
 
 
-def copyFiles(file, my_path):
+def copy_files(file, my_path):
     """
-        This is the function that move the files into their apropriate folder.
+        This is the function that move the files into their appropriate folder.
 
         It also replaces duplicated files.
 
-        Parametres : 
+        Parameters : 
             File - The file to be copied as a string type.
             destination - The name of the folder where the file must be copied, as string.
 
@@ -40,12 +40,10 @@ def copyFiles(file, my_path):
         print(f"Something went wrong with {error}")
 
 
-def createFolder():
+def create_folder():
     try:
         if folder_name not in os.listdir(installation_destination):
             os.makedirs(full)
-        else:
-            pass
     except BaseException as error:
         # be careful about the variable's name
         print(f"Something went wrong with {error}")
@@ -74,10 +72,10 @@ if __name__ == '__main__':
         print("======                    Installing...                        ======")
         print("=====================================================================")
         time.sleep(3)
-        createFolder()
-        copyFiles(os.path.join("powfu.exe"), "windows-executable")
-        copyFiles(os.path.join("HOWTO.txt"), os.getcwd())
-        copyFiles(os.path.join("uninstaller.bat"), "windows-executable")
+        create_folder()
+        copy_files(os.path.join("powfu.exe"), "windows-executable")
+        copy_files(os.path.join("HOWTO.txt"), os.getcwd())
+        copy_files(os.path.join("uninstaller.bat"), "windows-executable")
         create_root_key()
         print("Installation Done successfully!")
         time.sleep(2)

@@ -61,15 +61,13 @@ iso_exts = [
     ".iso",
 ]
 
-
 def guess(file):
     """
         This function gess the extension of any file
     """
     return os.path.splitext(file)[-1]
 
-
-def getAll():
+def get_all():
     """
         This function returns a list of all extensions.
     """
@@ -82,50 +80,46 @@ def getAll():
 
     return extensions
 
-
-def isMusic(extension):
+def is_music(extension):
     res = False
     if extension in music_exts:
         res = True
     return res
 
-
-def isImage(extension):
+def is_image(extension):
     res = False
     if extension in image_exts:
         res = True
     return res
 
 
-def isVideo(extension):
+def is_video(extension):
     res = False
     if extension in videos_exts:
         res = True
     return res
 
-
-def isDoc(extension):
+def is_doc(extension):
     res = False
     if extension in docs_exts:
         res = True
     return res
 
 
-def isCompacted(extension):
+def is_compacted(extension):
     res = False
     if extension in compacted_exts:
         res = True
     return res
 
 
-def isExecutable(extension):
+def is_executable(extension):
     res = False
     if extension in exec_exts:
         res = True
     return res
 
-
-def isIso(extension):
+def is_iso(extension):
     res = False
     if extension in iso_exts:
         res = True

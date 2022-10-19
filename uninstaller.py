@@ -10,7 +10,6 @@ print("""
     =====================================================================
     """)
 
-
 def delete_key(key, value):
     reg_connector = winreg.ConnectRegistry(None, winreg.HKEY_CLASSES_ROOT)
     reg_key = winreg.OpenKeyEx(reg_connector, 'Directory/Background/shell', 0, winreg.KEY_READ)

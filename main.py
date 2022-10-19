@@ -16,7 +16,7 @@ import time
 import extensions as exts
 
 main_folder = "PowFu - File Organizer"
-extensions = exts.getAll()
+extensions = exts.get_all()
 
 folders_name = [
     "Musics",
@@ -42,28 +42,27 @@ folder_exceptions = [
 ]
 
 
-def createOnce(_extensions_found):
+def create_one(_extensions_found):
     i = 0
     for extension in _extensions_found:
-        if exts.isMusic(extension):
+        if exts.is_music(extension):
             i = 0
-        elif exts.isImage(extension):
+        elif exts.is_image(extension):
             i = 1
-        elif exts.isVideo(extension):
+        elif exts.is_video(extension):
             i = 2
-        elif exts.isDoc(extension):
+        elif exts.is_doc(extension):
             i = 3
-        elif exts.isCompacted(extension):
+        elif exts.is_compacted(extension):
             i = 4
-        elif exts.isExecutable(extension):
+        elif exts.is_executable(extension):
             i = 5
         else:
             i = 6
         if folders_name[i] not in os.listdir(os.getcwd()):
             os.makedirs(folders_name[i])
 
-
-def createFolders():
+def create_folders():
     """
         This is the function that creates a new folder named as 
         PowFu- files organizer if the script was never ran in the context folder.
@@ -90,7 +89,7 @@ def createFolders():
             if not os.path.exists(main_folder):
                 os.makedirs(main_folder)
             os.chdir(os.path.join(current_path, main_folder))
-            createOnce(extensions_found)
+            create_one(extensions_found)
         else:
             flag = 1
             print("No files to organize!")
@@ -99,8 +98,7 @@ def createFolders():
         print("Access denied - You can not organize this folder!")
     return flag
 
-
-def moveFiles(file, destination):
+def move_files(file, destination):
     """
     This is the function that move the files into their apropriate folder.
     It also replaces duplicated files.
@@ -131,7 +129,6 @@ def banner():
     =====================================================================
     """)
 
-
 def main():
     total_documents = 0
     total_music = 0
@@ -142,7 +139,7 @@ def main():
     total_others = 0
     total_files = 0
 
-    flag = createFolders()
+    flag = create_folders()
     banner()
     for file in os.listdir(os.getcwd()):
         if os.path.isdir(file):
@@ -150,29 +147,29 @@ def main():
         if os.path.isfile(file):
             extension = exts.guess(file)
             if file.endswith(extension):
-                if exts.isMusic(extension):
-                    moveFiles(file, folders_name[0])
+                if exts.is_music(extension):
+                    move_files(file, folders_name[0])
                     total_music += 1
-                elif exts.isImage(extension):
-                    moveFiles(file, folders_name[1])
+                elif exts.is_image(extension):
+                    move_files(file, folders_name[1])
                     total_images += 1
-                elif exts.isVideo(extension):
-                    moveFiles(file, folders_name[2])
+                elif exts.is_video(extension):
+                    move_files(file, folders_name[2])
                     total_videos += 1
-                elif exts.isDoc(extension):
-                    moveFiles(file, folders_name[3])
+                elif exts.is_doc(extension):
+                    move_files(file, folders_name[3])
                     total_documents += 1
-                elif exts.isCompacted(extension):
-                    moveFiles(file, folders_name[4])
+                elif exts.is_compacted(extension):
+                    move_files(file, folders_name[4])
                     total_compacted += 1
-                elif exts.isExecutable(extension):
+                elif exts.is_executable(extension):
                     if file == "PowFu-File Organizer.run":
                         pass
                     else:
-                        moveFiles(file, folders_name[5])
+                        move_files(file, folders_name[5])
                         total_exe += 1
                 else:
-                    moveFiles(file, folders_name[6])
+                    move_files(file, folders_name[6])
                     total_others += 1
     total_files = total_compacted + total_documents + total_exe + total_images + total_videos + total_others
 
@@ -188,7 +185,6 @@ def main():
         print("Your Computer is organized now! Go to %s" % os.path.join(os.getcwd()), main_folder)
 
         time.sleep(3)
-
 
 if __name__ == '__main__':
     os.chdir(os.path.join(os.getcwd(), ".."))
