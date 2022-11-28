@@ -1,6 +1,6 @@
 <div align="center">
 
-![powfu-file-organizer-icon](img/icon-512x512.png)
+![powfu-file-organizer-icon](img/installation.gif)
 
 # powfu_file_organizer
 
