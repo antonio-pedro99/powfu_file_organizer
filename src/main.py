@@ -3,10 +3,9 @@
     It goes through a folder and check all files and organize them per type.
     Modules Used:
 
-    - shutil: provides utilities and functions for copying, archiving files and directory's tree.
-    - os: allows us to work with directories, files and so on.
-    - sys: This module provides access to some objects and functions used by the interpreter and to  interact with the system.
-"""
+    - shutil: provides utilities and functions for copying, archiving files and directory's tree. - os: allows us to
+    work with directories, files and so on. - sys: This module provides access to some objects and functions used by
+    the interpreter and to  interact with the system."""
 
 import getpass
 import os
@@ -40,6 +39,7 @@ folder_exceptions = [
     f"C:/Users/{getpass.getuser()}/Desktop"
 ]
 
+
 def create_one(_extensions_found):
     i = 0
     for extension in _extensions_found:
@@ -60,17 +60,18 @@ def create_one(_extensions_found):
         if folders_name[i] not in os.listdir(os.getcwd()):
             os.makedirs(folders_name[i])
 
+
 def create_folders():
     """
         This is the function that creates a new folder named as 
         PowFu- files organizer if the script was never ran in the context folder.
 
-        If the script has already ran into this folder or there are no files except "the program",
+        If the script has already run into this folder or there are no files except "the program",
         it will inform the user that there are no files to organize.
 
-        Parametres : This function does not receive any parametre
-        Return : This function returns a integer value "flag", which I used to show the final result.
-        To be more specific, if flag is 0 that means that a folder where created and some files were organized otherwise do nothing.
+        Parameters : This function does not receive any parameter Return : This function returns a integer value
+        "flag", which I used to show the final result. To be more specific, if flag is 0 that means that a folder
+        where created and some files were organized otherwise do nothing.
 
     """
     flag = 0
@@ -95,6 +96,7 @@ def create_folders():
         flag = 1
         print("Access denied - You can not organize this folder!")
     return flag
+
 
 def move_files(file, destination):
     """
@@ -126,6 +128,7 @@ def banner():
     ======                  By. Antonio Pedro                      ======
     =====================================================================
     """)
+
 
 def main():
     total_documents = 0
@@ -177,13 +180,14 @@ def main():
         print("Total Number of Musics copied: %s" % total_music)
         print("Total Number of Images copied: %s" % total_images)
         print("Total Number of Videos copied: %s" % total_videos)
-        print("Total Number of Compacteds copied: %s" % total_compacted)
+        print("Total Number of Compressed copied: %s" % total_compacted)
         print("Total Number of Programs copied: %s" % total_exe)
         print("Total Number of others file copied: %s" % total_others)
         print("Your Computer is organized now! Go to %s" % os.path.join(os.getcwd()), main_folder)
 
         time.sleep(3)
 
+
 if __name__ == '__main__':
-    os.chdir(os.path.join(os.getcwd(), ".."))
+    os.chdir(os.path.join(os.getcwd(), "../.."))
     main()
